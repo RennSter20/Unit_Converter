@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:id="@+id/lenghtFragment"
+        android:icon="@drawable/ic_lenght_triangle"
+        android:title="@string/title_lenght" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:id="@+id/weightFragment"
+        android:icon="@drawable/ic_weight"
+        android:title="@string/title_weight" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/temperatureFragment"
+        android:icon="@drawable/ic_temperature"
+        android:title="@string/title_temperature" />
 
 </menu>
