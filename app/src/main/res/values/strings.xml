@@ -6,7 +6,10 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="your_lenght">Your lenght:</string>
-    
+    <string name="kilometer">Kilometer</string>
+    <string name="meter">Meter</string>
+    <string name="defaultTextNoValue">-</string>
+
     <string-array name="lenght_first">
          <item>Kilometer</item>
          <item>Meter</item>

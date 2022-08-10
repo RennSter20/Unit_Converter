@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputLayout
 
@@ -20,6 +21,11 @@ class LenghtFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        var map = mapOf<String, Int>(
+            "Kilometer" to 1, "Meter" to 1000,
+            "Decimeter" to 10000, "Centimeter" to 100000,
+            "Milimeter" to 1000000
+        )
 
     }
 
@@ -40,16 +46,20 @@ class LenghtFragment : Fragment() {
         val lenght = resources.getStringArray(R.array.lenght_first)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, lenght)
         getView()?.findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)?.setAdapter(arrayAdapter)
-        getView()?.findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView2)?.setAdapter(arrayAdapter)
 
         var inputLenghtUser = getView()?.findViewById<EditText>(R.id.editTextNumberDecimal)
         var calculateButton = getView()?.findViewById<Button>(R.id.button)
-        var resultText: TextView? = getView()?.findViewById(R.id.result)
 
-        if (calculateButton != null) {
-            calculateButton.setOnClickListener(){
-                var inputDouble:Double = inputLenghtUser.text.
+            calculateButton?.setOnClickListener(){
+                var inputDouble:Double? = null
+                    if(inputLenghtUser?.text.isNullOrEmpty()){
+                        var view: View? = activity?.findViewById(android.R.id.content)
+                        Snackbar.make(view!!, "Please enter lenght.", Snackbar.LENGTH_SHORT).show()
+                    }
             }
-        }
+
+
+        
     }
+
 }
