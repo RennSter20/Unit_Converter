@@ -1,14 +1,14 @@
 package com.example.unitconverter
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
+import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.textfield.MaterialAutoCompleteTextView
-import com.google.android.material.textfield.TextInputLayout
+
 
 /**
  * A simple [Fragment] subclass.
@@ -47,10 +47,23 @@ class LenghtFragment : Fragment() {
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, lenght)
         getView()?.findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)?.setAdapter(arrayAdapter)
 
+        var spinner = getView()?.findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
+        var text: TextView? = getView()?.findViewById(R.id.lenght_kilo_result)
+        var selectedItem:String? = null
+
+        spinner?.setOnItemClickListener(OnItemClickListener { parent, view, position, id ->
+            selectedItem = parent.getItemAtPosition(position) as String
+            // here is your selected item
+        })
+
+
+
+
         var inputLenghtUser = getView()?.findViewById<EditText>(R.id.editTextNumberDecimal)
         var calculateButton = getView()?.findViewById<Button>(R.id.button)
 
             calculateButton?.setOnClickListener(){
+                text?.text = selectedItem
                 var inputDouble:Double? = null
                     if(inputLenghtUser?.text.isNullOrEmpty()){
                         var view: View? = activity?.findViewById(android.R.id.content)
