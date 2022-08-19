@@ -8,6 +8,9 @@
     <string name="your_lenght">Your lenght:</string>
     <string name="kilometer">Kilometer</string>
     <string name="meter">Meter</string>
+    <string name="decimeter">Decimeter</string>
+    <string name="centimeter">Centimeter</string>
+    <string name="milimeter">Milimeter</string>
     <string name="defaultTextNoValue">-</string>
 
     <string-array name="lenght_first">

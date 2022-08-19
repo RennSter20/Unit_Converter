@@ -58,9 +58,13 @@
         android:layout_height="match_parent"
         android:layout_marginTop="350dp"
         android:stretchColumns="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <TableRow
+            android:id="@+id/kilometer_row"
             android:layout_width="match_parent"
             android:layout_height="43dp">
 
@@ -75,12 +79,13 @@
                 android:id="@+id/lenght_kilo_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/defaultTextNoValue"
                 android:gravity="right"
-                android:paddingHorizontal="150dp"/>
+                android:paddingHorizontal="150dp"
+                android:text="@string/defaultTextNoValue" />
         </TableRow>
 
         <TableRow
+            android:id="@+id/meter_row"
             android:layout_width="match_parent"
             android:layout_height="43dp">
 
@@ -95,9 +100,51 @@
                 android:id="@+id/lenght_meter_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/defaultTextNoValue"
                 android:gravity="right"
-                android:paddingHorizontal="150dp"/>
+                android:paddingHorizontal="150dp"
+                android:text="@string/defaultTextNoValue" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/decimeter_row"
+            android:layout_width="match_parent"
+            android:layout_height="183dp">
+
+            <TextView
+                android:id="@+id/lenght_decimeter_text"
+                android:layout_width="100dp"
+                android:layout_column="1"
+                android:padding="10dip"
+                android:text="@string/decimeter" />
+
+            <TextView
+                android:id="@+id/lenght_decimeter_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingHorizontal="150dp"
+                android:text="@string/defaultTextNoValue" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/centimeter_row"
+            android:layout_width="match_parent"
+            android:layout_height="183dp">
+
+            <TextView
+                android:id="@+id/lenght_centimeter_text"
+                android:layout_width="100dp"
+                android:layout_column="1"
+                android:padding="10dip"
+                android:text="@string/centimeter" />
+
+            <TextView
+                android:id="@+id/lenght_centimeter_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingHorizontal="150dp"
+                android:text="@string/defaultTextNoValue" />
         </TableRow>
 
     </TableLayout>

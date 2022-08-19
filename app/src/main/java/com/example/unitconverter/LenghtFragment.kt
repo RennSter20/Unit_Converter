@@ -1,11 +1,17 @@
 package com.example.unitconverter
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context.NOTIFICATION_SERVICE
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
+import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 
@@ -20,12 +26,6 @@ class LenghtFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        var map = mapOf<String, Int>(
-            "Kilometer" to 1, "Meter" to 1000,
-            "Decimeter" to 10000, "Centimeter" to 100000,
-            "Milimeter" to 1000000
-        )
 
     }
 
@@ -48,31 +48,69 @@ class LenghtFragment : Fragment() {
         getView()?.findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)?.setAdapter(arrayAdapter)
 
         var spinner = getView()?.findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
-        var text: TextView? = getView()?.findViewById(R.id.lenght_kilo_result)
+
+        var textKilo: TextView? = getView()?.findViewById(R.id.lenght_kilo_result)
+        var textMeter:TextView? = getView()?.findViewById(R.id.lenght_meter_result)
+        var textDeci:TextView? = getView()?.findViewById(R.id.lenght_decimeter_result)
+        var textCenti:TextView? = getView()?.findViewById(R.id.lenght_centimeter_result)
+
         var selectedItem:String? = null
 
         spinner?.setOnItemClickListener(OnItemClickListener { parent, view, position, id ->
             selectedItem = parent.getItemAtPosition(position) as String
-            // here is your selected item
         })
-
-
-
 
         var inputLenghtUser = getView()?.findViewById<EditText>(R.id.editTextNumberDecimal)
         var calculateButton = getView()?.findViewById<Button>(R.id.button)
 
+        fun largeNumber(number:Double) :Boolean{
+            var bool:Boolean = false
+
+            if(number > 1000){
+                bool = true
+            }
+
+            return bool
+        }
+
+        fun setText(selectedItem:String):Boolean {
+            when{
+                selectedItem.equals("Kilometer") -> {
+                    textKilo?.text = inputLenghtUser?.text.toString()
+                    textMeter?.text = (inputLenghtUser?.text.toString().toDouble() * 1000).toString()
+                    textDeci?.text = (inputLenghtUser?.text.toString().toDouble() * 10000).toString()
+                    textCenti?.text = (inputLenghtUser?.text.toString().toDouble() * 100000).toString()
+                }
+
+                selectedItem.equals("Meter") -> {
+                    textKilo?.text = ((inputLenghtUser?.text.toString().toDouble() * 0.001).toString())
+                    textMeter?.text = inputLenghtUser?.text.toString()
+                    textDeci?.text = (inputLenghtUser?.text.toString().toDouble() * 10).toString()
+                    textCenti?.text = (inputLenghtUser?.text.toString().toDouble() * 100).toString()
+                }
+            }
+            return true
+
+        }
+
             calculateButton?.setOnClickListener(){
-                text?.text = selectedItem
                 var inputDouble:Double? = null
                     if(inputLenghtUser?.text.isNullOrEmpty()){
                         var view: View? = activity?.findViewById(android.R.id.content)
                         Snackbar.make(view!!, "Please enter lenght.", Snackbar.LENGTH_SHORT).show()
+                    }else{
+
+                            if(setText(selectedItem.toString())){
+                                Snackbar.make(requireView(), "Your lenght has been calculated!", Snackbar.LENGTH_SHORT).show()
+                            }
+
                     }
             }
 
 
         
     }
+
+
 
 }
