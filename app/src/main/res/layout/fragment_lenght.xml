@@ -7,32 +7,11 @@
     tools:context=".LenghtFragment" >
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="166dp"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal">
-
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:inputType="none"
-            android:text="Input lenght" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <EditText
         android:id="@+id/editTextNumberDecimal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="84dp"
         android:ems="10"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
@@ -42,23 +21,13 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Calculate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="308dp"
         android:stretchColumns="1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -66,18 +35,19 @@
         <TableRow
             android:id="@+id/kilometer_row"
             android:layout_width="match_parent"
-            android:layout_height="43dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/lenght_kilo_text"
                 android:layout_width="100dp"
                 android:layout_column="1"
+                android:gravity="center_horizontal"
                 android:padding="10dip"
                 android:text="@string/kilometer" />
 
             <TextView
                 android:id="@+id/lenght_kilo_result"
-                android:layout_width="wrap_content"
+                android:layout_width="275dp"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:paddingHorizontal="150dp"
@@ -93,6 +63,7 @@
                 android:id="@+id/lenght_meter_text"
                 android:layout_width="100dp"
                 android:layout_column="1"
+                android:gravity="center_horizontal"
                 android:padding="10dip"
                 android:text="@string/meter" />
 
@@ -114,6 +85,7 @@
                 android:id="@+id/lenght_decimeter_text"
                 android:layout_width="100dp"
                 android:layout_column="1"
+                android:gravity="center_horizontal"
                 android:padding="10dip"
                 android:text="@string/decimeter" />
 
@@ -135,6 +107,7 @@
                 android:id="@+id/lenght_centimeter_text"
                 android:layout_width="100dp"
                 android:layout_column="1"
+                android:gravity="center_horizontal"
                 android:padding="10dip"
                 android:text="@string/centimeter" />
 
@@ -156,6 +129,7 @@
                 android:id="@+id/lenght_milimeter_text"
                 android:layout_width="100dp"
                 android:layout_column="1"
+                android:gravity="center_horizontal"
                 android:padding="10dip"
                 android:text="@string/milimeter" />
 
@@ -169,5 +143,37 @@
         </TableRow>
 
     </TableLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="166dp"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="Input lenght" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
