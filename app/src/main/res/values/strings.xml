@@ -5,19 +5,37 @@
     <string name="title_temperature">Temperature</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="your_lenght">Your lenght:</string>
     <string name="kilometer">Kilometer</string>
     <string name="meter">Meter</string>
     <string name="decimeter">Decimeter</string>
     <string name="centimeter">Centimeter</string>
     <string name="milimeter">Milimeter</string>
+
+    <string name="mile">Mile</string>
+    <string name="yard">Yard</string>
+    <string name="foot">Foot</string>
+    <string name="inch">Inch</string>
     <string name="defaultTextNoValue">-</string>
 
     <string-array name="lenght_first">
-         <item>Kilometer</item>
-         <item>Meter</item>
-         <item>Decimeter</item>
-         <item>Centimeter</item>
+        <item>Kilometer</item>
+        <item>Meter</item>
+        <item>Decimeter</item>
+        <item>Centimeter</item>
         <item>Milimeter</item>
+
+        <item>Mile</item>
+        <item>Yard</item>
+        <item>Foot</item>
+        <item>Inch</item>
     </string-array>
+
+    <string name="your_weight">Your weight:</string>
+    <string name="kilogram">Kilogram</string>
+    <string name="gram">Gram</string>
+    <string name="miligram">Miligram</string>
+    <string name="pound">Pound</string>
+
 </resources>

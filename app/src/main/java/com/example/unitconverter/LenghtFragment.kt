@@ -9,6 +9,7 @@ import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
+import org.w3c.dom.Text
 import java.text.DecimalFormat
 
 
@@ -50,6 +51,8 @@ class LenghtFragment : Fragment() {
         var textDeci:TextView? = getView()?.findViewById(R.id.lenght_decimeter_result)
         var textCenti:TextView? = getView()?.findViewById(R.id.lenght_centimeter_result)
         var textMili:TextView? = getView()?.findViewById(R.id.lenght_milimeter_result)
+        var textMile:TextView? = getView()?.findViewById(R.id.lenght_mile_result)
+
 
         var selectedItem:String? = null
 
@@ -71,58 +74,76 @@ class LenghtFragment : Fragment() {
 
             if(spinner?.text?.toString() == "Input lenght"){
                 return false
+            }else
+            {
+                when{
+                    selectedItem.equals("Kilometer") -> {
+                        textKilo?.text = inputLenghtUser?.text.toString()
+                        textMeter?.text = (inputLenghtUser?.text.toString().toDouble() * 1000).toString()
+                        textDeci?.text = (inputLenghtUser?.text.toString().toDouble() * 10000).toString()
+                        textCenti?.text = (inputLenghtUser?.text.toString().toDouble() * 100000).toString()
+                        textMili?.text = (inputLenghtUser?.text.toString().toDouble() * 1000000).toString()
+                        textMile?.text =(inputLenghtUser?.text.toString().toDouble() * 0.6213688756).toString()
+
+                    }
+
+                    selectedItem.equals("Meter") -> {
+                        textKilo?.text = ((inputLenghtUser?.text.toString().toDouble() * 0.001).toString())
+                        textMeter?.text = inputLenghtUser?.text.toString()
+                        textDeci?.text = (inputLenghtUser?.text.toString().toDouble() * 10).toString()
+                        textCenti?.text = (inputLenghtUser?.text.toString().toDouble() * 100).toString()
+                        textMili?.text = (inputLenghtUser?.text.toString().toDouble() * 1000).toString()
+                        textMile?.text = (inputLenghtUser?.text.toString().toDouble() * 0.0006213689).toString()
+
+                    }
+
+                    selectedItem.equals("Decimeter") -> {
+                        textKilo?.text = ((inputLenghtUser?.text.toString().toDouble() * 0.0001).toString())
+                        textMeter?.text = (inputLenghtUser?.text.toString().toDouble() * 0.1).toString()
+                        textDeci?.text = inputLenghtUser?.text.toString()
+                        textCenti?.text = (inputLenghtUser?.text.toString().toDouble() * 10).toString()
+                        textMili?.text = (inputLenghtUser?.text.toString().toDouble() * 100).toString()
+                        textMili?.text = (inputLenghtUser?.text.toString().toDouble() * 0.0000621371).toString()
+
+                    }
+
+                    selectedItem.equals("Centimeter") -> {
+                        textKilo?.text = ((inputLenghtUser?.text.toString().toDouble() * 0.00001).toString())
+                        textMeter?.text = (inputLenghtUser?.text.toString().toDouble() * 0.01).toString()
+                        textDeci?.text = (inputLenghtUser?.text.toString().toDouble() * 0.1).toString()
+                        textCenti?.text = inputLenghtUser?.text.toString()
+                        textMili?.text = (inputLenghtUser?.text.toString().toDouble() * 10).toString()
+
+
+                    }
+
+                    selectedItem.equals("Milimeter") -> {
+                        textKilo?.text = ((inputLenghtUser?.text.toString().toDouble() * 0.000001).toString())
+                        textMeter?.text = (inputLenghtUser?.text.toString().toDouble() * 0.001).toString()
+                        textDeci?.text = (inputLenghtUser?.text.toString().toDouble() * 0.01).toString()
+                        textCenti?.text = (inputLenghtUser?.text.toString().toDouble() * 0.1).toString()
+                        textMili?.text = inputLenghtUser?.text.toString()
+
+
+                    }
+
+                    selectedItem.equals("Mile") -> {
+                        textKilo?.text = (inputLenghtUser?.text.toString().toDouble() * 1.60935).toString()
+                        textMeter?.text = (inputLenghtUser?.text.toString().toDouble() * 1609.35).toString()
+                        textDeci?.text = (inputLenghtUser?.text.toString().toDouble() * 16093.4).toString()
+                        textCenti?.text = (inputLenghtUser?.text.toString().toDouble() * 160935).toString()
+                        textMili?.text = (inputLenghtUser?.text.toString().toDouble() * 1609350).toString()
+                        textMile?.text = inputLenghtUser?.text.toString()
+                    }
+                }
+
+
+                for(item in list){
+                    item?.text = format.format(item?.text.toString().toDouble()).toString()
+
+                }
             }
 
-
-
-            when{
-                selectedItem.equals("Kilometer") -> {
-                    textKilo?.text = inputLenghtUser?.text.toString()
-                    textMeter?.text = (inputLenghtUser?.text.toString().toFloat() * 1000).toString()
-                    textDeci?.text = (inputLenghtUser?.text.toString().toFloat() * 10000).toString()
-                    textCenti?.text = (inputLenghtUser?.text.toString().toFloat() * 100000).toString()
-                    textMili?.text = (inputLenghtUser?.text.toString().toFloat() * 1000000).toString()
-                }
-
-                selectedItem.equals("Meter") -> {
-                    textKilo?.text = ((inputLenghtUser?.text.toString().toFloat() * 0.001).toString())
-                    textMeter?.text = inputLenghtUser?.text.toString()
-                    textDeci?.text = (inputLenghtUser?.text.toString().toFloat() * 10).toString()
-                    textCenti?.text = (inputLenghtUser?.text.toString().toFloat() * 100).toString()
-                    textMili?.text = (inputLenghtUser?.text.toString().toFloat() * 1000).toString()
-                }
-
-                selectedItem.equals("Decimeter") -> {
-                    textKilo?.text = ((inputLenghtUser?.text.toString().toFloat() * 0.0001).toString())
-                    textMeter?.text = (inputLenghtUser?.text.toString().toFloat() * 0.1).toString()
-                    textDeci?.text = inputLenghtUser?.text.toString()
-                    textCenti?.text = (inputLenghtUser?.text.toString().toFloat() * 10).toString()
-                    textMili?.text = (inputLenghtUser?.text.toString().toFloat() * 100).toString()
-                }
-
-                selectedItem.equals("Centimeter") -> {
-                    textKilo?.text = ((inputLenghtUser?.text.toString().toFloat() * 0.00001).toString())
-                    textMeter?.text = (inputLenghtUser?.text.toString().toFloat() * 0.01).toString()
-                    textDeci?.text = (inputLenghtUser?.text.toString().toFloat() * 0.1).toString()
-                    textCenti?.text = inputLenghtUser?.text.toString()
-                    textMili?.text = (inputLenghtUser?.text.toString().toFloat() * 10).toString()
-                }
-
-                selectedItem.equals("Milimeter") -> {
-                    textKilo?.text = ((inputLenghtUser?.text.toString().toFloat() * 0.000001).toString())
-                    textMeter?.text = (inputLenghtUser?.text.toString().toFloat() * 0.001).toString()
-                    textDeci?.text = (inputLenghtUser?.text.toString().toFloat() * 0.01).toString()
-                    textCenti?.text = (inputLenghtUser?.text.toString().toFloat() * 0.1).toString()
-                    textMili?.text = inputLenghtUser?.text.toString()
-
-
-                }
-            }
-
-
-            for(item in list){
-                item?.text = format.format(item?.text.toString().toFloat()).toString()
-            }
 
             return true
 
