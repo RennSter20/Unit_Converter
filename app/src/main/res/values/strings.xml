@@ -14,9 +14,6 @@
     <string name="milimeter">Milimeter</string>
 
     <string name="mile">Mile</string>
-    <string name="yard">Yard</string>
-    <string name="foot">Foot</string>
-    <string name="inch">Inch</string>
     <string name="defaultTextNoValue">-</string>
 
     <string-array name="lenght_first">
@@ -25,17 +22,17 @@
         <item>Decimeter</item>
         <item>Centimeter</item>
         <item>Milimeter</item>
-
         <item>Mile</item>
-        <item>Yard</item>
-        <item>Foot</item>
-        <item>Inch</item>
     </string-array>
 
+
     <string name="your_weight">Your weight:</string>
-    <string name="kilogram">Kilogram</string>
-    <string name="gram">Gram</string>
-    <string name="miligram">Miligram</string>
-    <string name="pound">Pound</string>
+
+    <string-array name="weight_measures">
+        <item>Kilogram</item>
+        <item>Gram</item>
+        <item>Miligram</item>
+        <item>Pound</item>
+    </string-array>
 
 </resources>

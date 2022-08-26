@@ -6,17 +6,17 @@
     app:startDestination="@id/lenghtFragment">
     <fragment
         android:id="@+id/lenghtFragment"
-        android:name="com.example.unitconverter.LenghtFragment"
+        android:name="com.rennster.unitconverter.LenghtFragment"
         android:label="@string/title_lenght"
         tools:layout="@layout/fragment_lenght" />
     <fragment
         android:id="@+id/weightFragment"
-        android:name="com.example.unitconverter.WeightFragment"
+        android:name="com.rennster.unitconverter.WeightFragment"
         android:label="@string/title_weight"
         tools:layout="@layout/fragment_weight" />
     <fragment
         android:id="@+id/temperatureFragment"
-        android:name="com.example.unitconverter.TemperatureFragment"
+        android:name="com.rennster.unitconverter.TemperatureFragment"
         android:label="@string/title_temperature"
         tools:layout="@layout/fragment_temperature" />
 </navigation>
