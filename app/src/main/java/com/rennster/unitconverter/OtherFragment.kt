@@ -15,7 +15,7 @@ import com.rennster.unitconverter.placeholder.PlaceholderContent
  */
 class OtherFragment : Fragment() {
 
-    private var columnCount = 1
+    private var columnCount = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

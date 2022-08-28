@@ -68,7 +68,7 @@ class WeightFragment : Fragment() {
 
         fun setText(selectedItem:String):Boolean {
 
-            var format = DecimalFormat("0.#")
+            var format = DecimalFormat("0.0000#")
 
             var list = mutableListOf<TextView?>(
                 textKilogram,textGram, textMiligram, textPound

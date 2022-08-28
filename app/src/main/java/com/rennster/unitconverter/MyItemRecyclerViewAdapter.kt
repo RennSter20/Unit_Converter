@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 
 import com.rennster.unitconverter.placeholder.PlaceholderContent.PlaceholderItem
@@ -31,18 +32,16 @@ class MyItemRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
+
     }
 
     override fun getItemCount(): Int = values.size
 
     inner class ViewHolder(binding: FragmentOtherBinding) : RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.itemNumber
-        val contentView: TextView = binding.content
+        val button: Button = binding.button2
 
         override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
+            return button.setText("$position").toString()
         }
     }
 

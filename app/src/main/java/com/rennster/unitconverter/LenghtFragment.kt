@@ -11,6 +11,7 @@ import android.widget.AdapterView.OnItemClickListener
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputEditText
 import java.text.DecimalFormat
 
 
@@ -77,13 +78,13 @@ class LenghtFragment : Fragment() {
             Log.i("SPINNER TEXT", selectedItem.toString())
         })
 
-        var inputLenghtUser = getView()?.findViewById<EditText>(R.id.editTextNumberDecimal)
+        var inputLenghtUser = getView()?.findViewById<TextInputEditText>(R.id.lenghtInput)
         var calculateButton = getView()?.findViewById<Button>(R.id.button)
 
 
         fun setText(selectedItem:String):Boolean {
 
-            var format = DecimalFormat("0.#")
+            var format = DecimalFormat("0.0000#")
 
             var list = mutableListOf<TextView?>(
                 textKilo,textMeter, textDeci, textCenti, textMili
