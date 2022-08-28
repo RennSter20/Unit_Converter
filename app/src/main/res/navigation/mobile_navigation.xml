@@ -15,8 +15,8 @@
         android:label="@string/title_weight"
         tools:layout="@layout/fragment_weight" />
     <fragment
-        android:id="@+id/temperatureFragment"
-        android:name="com.rennster.unitconverter.TemperatureFragment"
-        android:label="@string/title_temperature"
-        tools:layout="@layout/fragment_temperature" />
+        android:id="@+id/otherFragment"
+        android:name="com.rennster.unitconverter.OtherFragment"
+        android:label="Other"
+        tools:layout="@layout/fragment_other_list" />
 </navigation>

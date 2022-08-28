@@ -12,8 +12,8 @@
         android:title="@string/title_weight" />
 
     <item
-        android:id="@+id/temperatureFragment"
-        android:icon="@drawable/ic_temperature"
-        android:title="@string/title_temperature" />
+        android:id="@+id/otherFragment"
+        android:icon="@drawable/ic_tools_svgrepo_com"
+        android:title="Other" />
 
 </menu>
