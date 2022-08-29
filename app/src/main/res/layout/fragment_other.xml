@@ -1,16 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OtherFragment">
 
     <Button
-        android:id="@+id/button2"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="Other"
-        app:icon="@drawable/ic_weight"
-        app:iconSize="50dp" />
-</LinearLayout>
+        android:id="@+id/otherButtonSpeed"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
+        android:text="Speed"
+        app:icon="@drawable/ic_speed"
+        app:iconSize="30dp"
+        style="@style/TextAppearance.App.Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otherButtonForce" />
+
+    <Button
+        android:id="@+id/otherButtonTime"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
+        android:text="Time"
+        app:icon="@drawable/ic_time"
+        app:iconSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otherButtonSpeed" />
+
+    <Button
+        android:id="@+id/otherButtonForce"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
+        android:text="Force"
+        app:icon="@drawable/ic_force"
+        app:iconSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otherButtonTemperature" />
+
+    <Button
+        android:id="@+id/otherButtonTemperature"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:text="Temperature"
+        app:icon="@drawable/ic_temperature"
+        app:iconSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

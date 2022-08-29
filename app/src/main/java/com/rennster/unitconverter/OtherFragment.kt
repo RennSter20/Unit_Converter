@@ -1,61 +1,47 @@
 package com.rennster.unitconverter
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.rennster.unitconverter.placeholder.PlaceholderContent
+import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.fragment.findNavController
 
-/**
- * A fragment representing a list of Items.
- */
 class OtherFragment : Fragment() {
 
-    private var columnCount = 2
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        arguments?.let {
-            columnCount = it.getInt(ARG_COLUMN_COUNT)
-        }
-    }
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_other_list, container, false)
-
-        // Set the adapter
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = MyItemRecyclerViewAdapter(PlaceholderContent.ITEMS)
-            }
-        }
-        return view
+        return inflater.inflate(R.layout.fragment_other, container, false)
     }
 
-    companion object {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        // TODO: Customize parameter argument names
-        const val ARG_COLUMN_COUNT = "column-count"
+        var tempButton: Button? = getView()?.findViewById(R.id.otherButtonTemperature)
+        var speedButton:Button? = getView()?.findViewById(R.id.otherButtonSpeed)
+        var forceButton:Button? = getView()?.findViewById(R.id.otherButtonForce)
+        var timeButton:Button? = getView()?.findViewById(R.id.otherButtonTime)
 
-        // TODO: Customize parameter initialization
-        @JvmStatic
-        fun newInstance(columnCount: Int) =
-            OtherFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_COLUMN_COUNT, columnCount)
-                }
-            }
+
+        tempButton?.setOnClickListener(){
+            findNavController().navigate(R.id.action_otherFragment_to_temperatureFragment)
+        }
+
+        speedButton?.setOnClickListener(){
+            findNavController().navigate(R.id.action_otherFragment_to_speedFragment)
+        }
+
+        forceButton?.setOnClickListener(){
+            findNavController().navigate(R.id.action_otherFragment_to_forceFragment)
+        }
+
+        timeButton?.setOnClickListener(){
+            findNavController().navigate(R.id.action_otherFragment_to_timeFragment)
+        }
     }
 }
