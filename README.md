@@ -10,6 +10,8 @@ kilometers, liters to deciliters etc.
 In the future I am looking into making more features that will benefit users in their everyday life such as writing dimensions of certain objects and calculating their 
 volume, mass...
 
+My project is also published on Google Play Store! 
+https://play.google.com/store/apps/details?id=com.rennster.unitconverter
 
 Thank you for looking into this project and feel free to contact me if you have any questions :)
 
