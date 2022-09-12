@@ -14,7 +14,6 @@
         android:text="Speed"
         app:icon="@drawable/ic_speed"
         app:iconSize="30dp"
-        style="@style/TextAppearance.App.Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

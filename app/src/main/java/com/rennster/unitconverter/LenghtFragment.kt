@@ -84,10 +84,11 @@ class LenghtFragment : Fragment() {
 
         fun setText(selectedItem:String):Boolean {
 
-            var format = DecimalFormat("0.0000#")
+            var format = DecimalFormat("0.0#") //2 decimal digits
+
 
             var list = mutableListOf<TextView?>(
-                textKilo,textMeter, textDeci, textCenti, textMili
+                textKilo,textMeter, textDeci, textCenti, textMili,textMile
             )
 
 
@@ -153,10 +154,10 @@ class LenghtFragment : Fragment() {
 
                     else -> return false
                 }
-
-
                 for(item in list){
-                    item?.text = format.format(item?.text.toString().toDouble()).toString()
+
+                        item?.text = format.format(item?.text.toString().toDouble()).toString()
+
 
                 }
 
